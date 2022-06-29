@@ -460,7 +460,7 @@ GameObject:
   - component: {fileID: 1546990221}
   - component: {fileID: 1546990220}
   m_Layer: 0
-  m_Name: GameObject (2)
+  m_Name: collider east
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -521,7 +521,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1546990219}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -54.1, y: -29.8, z: -35.202393}
+  m_LocalPosition: {x: 54.1, y: -29.8, z: -35.202393}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -634,7 +634,7 @@ GameObject:
   - component: {fileID: 1932142361}
   - component: {fileID: 1932142360}
   m_Layer: 0
-  m_Name: GameObject (3)
+  m_Name: collider south
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -694,13 +694,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1932142359}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -54.1, y: -29.8, z: -35.202393}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.70782495, w: 0.70638794}
+  m_LocalPosition: {x: 54.1, y: -30.56, z: -35.202393}
+  m_LocalScale: {x: 1, y: 1.7998, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90.116}
 --- !u!1 &2075841901
 GameObject:
   m_ObjectHideFlags: 0
@@ -713,7 +713,7 @@ GameObject:
   - component: {fileID: 2075841903}
   - component: {fileID: 2075841902}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: collider west
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -792,7 +792,7 @@ GameObject:
   - component: {fileID: 2128813901}
   - component: {fileID: 2128813900}
   m_Layer: 0
-  m_Name: GameObject (1)
+  m_Name: collider north
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -852,10 +852,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2128813899}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -54.1, y: -29.8, z: -35.202393}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.0031253546, y: 0.0031277402, z: -0.70683, w: 0.7073696}
+  m_LocalPosition: {x: -54.9, y: 30.7, z: -35.2}
+  m_LocalScale: {x: 1, y: 1.8461535, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.507, y: 0, z: -89.956}
