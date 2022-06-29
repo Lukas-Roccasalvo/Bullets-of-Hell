@@ -13,6 +13,14 @@ public class Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Rigidbody rb = GetComponent<Rigidbody>();
+        if (Input.GetKey(KeyCode.A))
+            rb.AddForce(Vector2.left);
+        if (Input.GetKey(KeyCode.D))
+            rb.AddForce(Vector2.right);
+        if (Input.GetKey(KeyCode.W))
+            rb.AddForce(Vector2.up);
+        if (Input.GetKey(KeyCode.S))
+            rb.AddForce(Vector2.down);
     }
 }
