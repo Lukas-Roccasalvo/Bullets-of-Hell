@@ -299,60 +299,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1535376032}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a89a7feac332aa499bbebbade39c0c5, type: 3}
+  m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 1535376037}
-  moveSpeed: 5
-  playerControls:
-    m_Name: Player Controls
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: ffa0e49b-fa01-495e-a8db-494b6dba0320
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 2D Vector
-      m_Id: 499430f9-61b1-4a98-a2cc-03adbcc7f530
-      m_Path: 2DVector
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Player Controls
-      m_Flags: 4
-    - m_Name: up
-      m_Id: e88ba4aa-9df0-4a6b-be24-7ab025b7de5c
-      m_Path: <Keyboard>/w
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Player Controls
-      m_Flags: 8
-    - m_Name: down
-      m_Id: 132d4838-a253-41aa-a4f4-6d1aed689f13
-      m_Path: <Keyboard>/s
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Player Controls
-      m_Flags: 8
-    - m_Name: left
-      m_Id: 58b9cd65-c8cf-4588-bb84-3213415d5027
-      m_Path: <Keyboard>/a
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Player Controls
-      m_Flags: 8
-    - m_Name: right
-      m_Id: 17e03f40-0a1a-47ab-8411-146282c3fe06
-      m_Path: <Keyboard>/d
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Player Controls
-      m_Flags: 8
-    m_Flags: 0
 --- !u!50 &1535376037
 Rigidbody2D:
   serializedVersion: 4
@@ -469,4 +418,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87442fe87e0396d49b7ef23d68ebb860, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: {x: 1, y: 1}
