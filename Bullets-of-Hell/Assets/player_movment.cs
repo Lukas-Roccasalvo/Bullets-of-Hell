@@ -40,5 +40,12 @@ public class Player_movment : MonoBehaviour
     {
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
     }
-   
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "Bullet")
+        {
+        }
+    }
+
 }

@@ -6,7 +6,6 @@ public class SpawnerScript : MonoBehaviour
 {
     public GameObject bullet;
     public SpawnerScript.Type type;
-    public float lifetime = 10;
     private float spawnIntervall = 0f;
 
     // Start is called before the first frame update
@@ -33,6 +32,7 @@ public class SpawnerScript : MonoBehaviour
 
     public enum Type
     {
-        random_radial
+        random_radial,
+        
     }
 }
