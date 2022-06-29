@@ -20,7 +20,7 @@ public class SpawnerScript : MonoBehaviour
         spawnIntervall -= Time.deltaTime;
         if(spawnIntervall < 0)
         {
-            spawnIntervall += 2f;
+            spawnIntervall += 0.5f;
             spwawnBullet(type);
         }
     }

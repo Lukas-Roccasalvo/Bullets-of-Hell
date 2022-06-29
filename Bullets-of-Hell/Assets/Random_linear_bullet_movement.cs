@@ -8,7 +8,7 @@ public class Random_linear_bullet_movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        direction = new Vector2(Random.value * 2 - 1, Random.value * 2 - 1);
+        direction = new Vector2(Random.value * 10 - 5, Random.value * 10 - 5);
 
 
     }

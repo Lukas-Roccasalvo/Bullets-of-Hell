@@ -8,6 +8,7 @@ public class Player_movment : MonoBehaviour
     public Rigidbody2D rb;
     public float moveSpeed = 5f;
     public InputAction playerControls;
+    public Transform youDied;
 
     Vector2 moveDirection = Vector2.zero;
     private void OnEnable()
@@ -45,6 +46,7 @@ public class Player_movment : MonoBehaviour
     {
         if (collision.transform.tag == "Bullet")
         {
+            youDied.GetComponent<SpriteRenderer>().enabled = true;
         }
     }
 
