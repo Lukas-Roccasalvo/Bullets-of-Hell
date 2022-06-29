@@ -1,41 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class player_movment : MonoBehaviour
+public class Player_movment : MonoBehaviour
 {
+    public Rigidbody2D rb;
+    public float moveSpeed = 5f;
+    public InputAction playerControls;
 
-    Rigidbody2D body;
+    Vector2 moveDirection = Vector2.zero;
+    private void OnEnable()
+    {
+        playerControls.Enable();
+    }
 
-    float horizontal;
-    float vertical;
-    float moveLimiter = 0.7f;
-
-    public float runSpeed = 20.0f;
+    private void OnDisable()
+    {
+        playerControls.Disable();
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        body = GetComponent<Rigidbody2D>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Gives a value between -1 and 1
-        horizontal = Input.GetAxisRaw("Horizontal"); // -1 is left
-        vertical = Input.GetAxisRaw("Vertical"); // -1 is down
+        //float moveX = Input.GetAxis("Horizontal");
+        //float moveY = Input.GetAxis("Vertical");
+        //moveDirection = new Vector2(moveX, moveY).normalized;
+
+        moveDirection = playerControls.ReadValue<Vector2>();
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
-        if (horizontal != 0 && vertical != 0) // Check for diagonal movement
-        {
-            // limit movement speed diagonally, so you move at 70% speed
-            horizontal *= moveLimiter;
-            vertical *= moveLimiter;
-        }
-
-        body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
+        rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
     }
+   
 }
