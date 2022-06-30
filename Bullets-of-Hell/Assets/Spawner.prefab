@@ -128,3 +128,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 5753706691871941360, guid: 81f141fc4611fcb4689a8255a3a7a1c1, type: 3}
   type: 0
+  randomPosition: 1
