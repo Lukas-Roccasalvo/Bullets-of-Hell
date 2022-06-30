@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5753706691871941362}
   - component: {fileID: 5753706691871941361}
   - component: {fileID: 5753706691871941363}
-  - component: {fileID: 7512088303665890791}
+  - component: {fileID: -5012955039665262920}
   m_Layer: 0
   m_Name: bullet
   m_TagString: Bullet
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87442fe87e0396d49b7ef23d68ebb860, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!58 &7512088303665890791
+--- !u!58 &-5012955039665262920
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
