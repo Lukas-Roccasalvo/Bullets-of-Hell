@@ -29,6 +29,7 @@ public class Player_movment : MonoBehaviour
     void Start()
     {
         Singelton.getInstance().running = true;
+
     }
 
     // Update is called once per frame
@@ -56,7 +57,11 @@ public class Player_movment : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+        
+        if(Singelton.getInstance().running)
+        {
+            rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
