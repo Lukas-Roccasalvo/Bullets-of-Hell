@@ -28,6 +28,7 @@ public class Player_movment : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Singelton.getInstance().running = true;
     }
 
     // Update is called once per frame
@@ -40,6 +41,7 @@ public class Player_movment : MonoBehaviour
         if (Keyboard.current.rKey.wasPressedThisFrame)
         {
             Singelton.getInstance().score = 0;
+            Singelton.getInstance().running = false;
             SceneManager.LoadScene(0);
         }
     }
@@ -51,19 +53,29 @@ public class Player_movment : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.tag == "Bullet")
+        if (!Singelton.getInstance().running)
+        {
+            return;
+        }
+            if (collision.transform.tag == "Bullet")
         {
             youDied.gameObject.SetActive(true);
+            Singelton.getInstance().running = false;
+            GetComponent<AudioSource>().Play();
+            moveSpeed /= 2f;
             //youDied.GetComponent<SpriteRenderer>().enabled = true;
-            Singelton.getInstance().score = 0;
 
         }
         else if (collision.transform.tag == "Checkpont")
         {
-            Singelton.getInstance().score++;
-            GameObject checkpoint = Instantiate(collision.gameObject);
-            checkpoint.transform.position = new Vector2(Random.Range(-50f, 50), Random.Range(-28f, 28));
-            Destroy(collision.gameObject);
+
+                Singelton.getInstance().score++;
+                GameObject checkpoint = Instantiate(collision.gameObject);
+                checkpoint.transform.position = new Vector2(Random.Range(-50f, 50), Random.Range(-28f, 28));
+                Destroy(collision.gameObject);
+
+            
+
         }
     }
 

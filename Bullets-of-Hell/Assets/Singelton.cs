@@ -6,6 +6,7 @@ public class Singelton
 {
     public static Singelton self;
     public int score = 0;
+    public bool running = true;
 
     private Singelton()
     {
