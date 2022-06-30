@@ -51,7 +51,7 @@ public class Player_movment : MonoBehaviour
             youDied.GetComponent<SpriteRenderer>().enabled = true;
         }else if(collision.transform.tag == "Checkpont")
         {
-            score++;
+            Singelton.getInstance().score++;
             GameObject checkpoint =  Instantiate(collision.gameObject);
             checkpoint.transform.position = new Vector2(Random.Range(-50f, 50), Random.Range(-28f, 28));
             Destroy(collision.gameObject);
