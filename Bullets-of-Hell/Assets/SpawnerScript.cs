@@ -11,7 +11,8 @@ public class SpawnerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        transform.position = new Vector2(Random.Range(-50f, 50), Random.Range(-28f, 28));
+
     }
 
     // Update is called once per frame
