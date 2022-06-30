@@ -28,7 +28,6 @@ public class Player_movment : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -37,12 +36,11 @@ public class Player_movment : MonoBehaviour
         //float moveX = Input.GetAxis("Horizontal");
         //float moveY = Input.GetAxis("Vertical");
         //moveDirection = new Vector2(moveX, moveY).normalized;
-
         moveDirection = playerControls.ReadValue<Vector2>();
         if (Keyboard.current.rKey.wasPressedThisFrame)
         {
             Singelton.getInstance().score = 0;
-
+            SceneManager.LoadScene(0);
         }
     }
 
@@ -55,10 +53,9 @@ public class Player_movment : MonoBehaviour
     {
         if (collision.transform.tag == "Bullet")
         {
-
-            youDied.GetComponent<SpriteRenderer>().enabled = true;
+            youDied.gameObject.SetActive(true);
+            //youDied.GetComponent<SpriteRenderer>().enabled = true;
             Singelton.getInstance().score = 0;
-            SceneManager.LoadScene(0);
 
         }
         else if (collision.transform.tag == "Checkpont")
