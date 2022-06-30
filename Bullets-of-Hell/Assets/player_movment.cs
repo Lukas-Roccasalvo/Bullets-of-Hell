@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Player_movment : MonoBehaviour
 {
     public Rigidbody2D rb;
-    public float moveSpeed = 5f;
+    public float moveSpeed;
     public InputAction playerControls;
     public Transform youDied;
 
@@ -44,6 +44,14 @@ public class Player_movment : MonoBehaviour
             Singelton.getInstance().running = false;
             SceneManager.LoadScene(0);
         }
+        if (Keyboard.current.shiftKey.wasPressedThisFrame)
+        {
+            moveSpeed /= 2;
+        }
+        if (Keyboard.current.shiftKey.wasReleasedThisFrame)
+        {
+            moveSpeed *= 2;
+        }
     }
 
     private void FixedUpdate()
@@ -62,7 +70,6 @@ public class Player_movment : MonoBehaviour
             youDied.gameObject.SetActive(true);
             Singelton.getInstance().running = false;
             GetComponent<AudioSource>().Play();
-            moveSpeed /= 2f;
             //youDied.GetComponent<SpriteRenderer>().enabled = true;
 
         }
@@ -72,7 +79,10 @@ public class Player_movment : MonoBehaviour
                 Singelton.getInstance().score++;
                 GameObject checkpoint = Instantiate(collision.gameObject);
                 checkpoint.transform.position = new Vector2(Random.Range(-50f, 50), Random.Range(-28f, 28));
-                Destroy(collision.gameObject);
+                Destroy(collision.gameObject, 2f);
+            collision.gameObject.GetComponent<CircleCollider2D>().enabled = false;
+            collision.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            collision.gameObject.GetComponent<AudioSource>().Play();
 
             
 

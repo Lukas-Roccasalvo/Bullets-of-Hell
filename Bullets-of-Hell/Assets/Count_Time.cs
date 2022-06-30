@@ -18,7 +18,12 @@ public class Count_Time : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!Singelton.getInstance().running)
+        {
+            return;
+        }
         time += Time.deltaTime;
+
         tmp.text = Mathf.Round(time) + "s";
     }
 }
