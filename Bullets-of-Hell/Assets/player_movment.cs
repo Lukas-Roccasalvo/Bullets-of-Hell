@@ -43,7 +43,6 @@ public class Player_movment : MonoBehaviour
         {
             Singelton.getInstance().score = 0;
 
-            SceneManager.LoadScene(0);
         }
     }
 
