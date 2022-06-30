@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class Player_movment : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class Player_movment : MonoBehaviour
     private int score = 0;
 
     Vector2 moveDirection = Vector2.zero;
+
     private void OnEnable()
     {
         playerControls.Enable();
@@ -26,7 +28,7 @@ public class Player_movment : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -37,6 +39,10 @@ public class Player_movment : MonoBehaviour
         //moveDirection = new Vector2(moveX, moveY).normalized;
 
         moveDirection = playerControls.ReadValue<Vector2>();
+        if (Keyboard.current.rKey.wasPressedThisFrame)
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 
     private void FixedUpdate()
@@ -48,11 +54,16 @@ public class Player_movment : MonoBehaviour
     {
         if (collision.transform.tag == "Bullet")
         {
+
             youDied.GetComponent<SpriteRenderer>().enabled = true;
-        }else if(collision.transform.tag == "Checkpont")
+
+            SceneManager.LoadScene(0);
+
+        }
+        else if (collision.transform.tag == "Checkpont")
         {
             Singelton.getInstance().score++;
-            GameObject checkpoint =  Instantiate(collision.gameObject);
+            GameObject checkpoint = Instantiate(collision.gameObject);
             checkpoint.transform.position = new Vector2(Random.Range(-50f, 50), Random.Range(-28f, 28));
             Destroy(collision.gameObject);
         }
