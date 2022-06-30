@@ -18,6 +18,11 @@ public class Random_linear_bullet_movement : MonoBehaviour
     {
 
         transform.position = (Vector2) transform.position + (direction * Time.deltaTime);
+        if(transform.position.x > 100f || transform.position.x < -100f ||
+            transform.position.y > 50f || transform.position.y < -50f)
+        {
+            Destroy(this);
+        }
     }
 
    
