@@ -7,6 +7,7 @@ public class Count_Time : MonoBehaviour
 {
 
     TextMeshPro tmp;
+    float time = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,7 @@ public class Count_Time : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        tmp.text = Mathf.Round(Time.time) + "s";
+        time += Time.deltaTime;
+        tmp.text = Mathf.Round(time) + "s";
     }
 }

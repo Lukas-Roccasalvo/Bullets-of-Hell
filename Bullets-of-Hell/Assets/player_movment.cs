@@ -41,6 +41,8 @@ public class Player_movment : MonoBehaviour
         moveDirection = playerControls.ReadValue<Vector2>();
         if (Keyboard.current.rKey.wasPressedThisFrame)
         {
+            Singelton.getInstance().score = 0;
+
             SceneManager.LoadScene(0);
         }
     }
@@ -56,7 +58,7 @@ public class Player_movment : MonoBehaviour
         {
 
             youDied.GetComponent<SpriteRenderer>().enabled = true;
-
+            Singelton.getInstance().score = 0;
             SceneManager.LoadScene(0);
 
         }
