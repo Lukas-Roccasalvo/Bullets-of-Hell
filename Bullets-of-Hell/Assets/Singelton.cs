@@ -7,7 +7,7 @@ public class Singelton
     public static Singelton self;
     public int score = 0;
     public bool running = true;
-    public int healt = 3;
+    public int health = 3;
 
     private Singelton()
     {

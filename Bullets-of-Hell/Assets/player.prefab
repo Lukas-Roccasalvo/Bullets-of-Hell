@@ -171,7 +171,7 @@ MonoBehaviour:
       m_Action: Player Controls
       m_Flags: 8
     m_Flags: 0
-  youDied: {fileID: 0}
+  youDied: {fileID: 4227841655250517112, guid: 74e7c38bec3c89a469fa18b45d918c77, type: 3}
 --- !u!58 &5712475359652915969
 CircleCollider2D:
   m_ObjectHideFlags: 0

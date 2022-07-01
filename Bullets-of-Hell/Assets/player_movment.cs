@@ -41,9 +41,11 @@ public class Player_movment : MonoBehaviour
         moveDirection = playerControls.ReadValue<Vector2>();
         if (Keyboard.current.rKey.wasPressedThisFrame)
         {
+            Singelton.getInstance().health = 3;
             Singelton.getInstance().score = 0;
             Singelton.getInstance().running = false;
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
         }
         if (Keyboard.current.shiftKey.wasPressedThisFrame)
         {
@@ -70,12 +72,32 @@ public class Player_movment : MonoBehaviour
         {
             return;
         }
-            if (collision.transform.tag == "Bullet")
+        if (collision.transform.tag == "Bullet")
         {
-            youDied.gameObject.SetActive(true);
-            Singelton.getInstance().running = false;
-            GetComponent<AudioSource>().Play();
-            //youDied.GetComponent<SpriteRenderer>().enabled = true;
+            Singelton.getInstance().health--;
+            Destroy(collision.gameObject);
+            switch (Singelton.getInstance().health)
+            {
+                case 2:
+                    GetComponent<SpriteRenderer>().color = new Color(0f, 185f, 255f);
+                    GetComponent<TrailRenderer>().startColor = new Color(0f, 185f, 255f);
+                    GetComponent<TrailRenderer>().endColor = new Color(0f, 185f, 255f);
+                    break;
+                case 1:
+                    GetComponent<SpriteRenderer>().color = new Color(182f, 235f, 255f);
+                    GetComponent<TrailRenderer>().startColor = new Color(182f, 235f, 255f);
+                    GetComponent<TrailRenderer>().endColor = new Color(182f, 235f, 255f);
+                    break;
+                default:
+                    break;
+            }
+            if (Singelton.getInstance().health <= 0)
+            {
+                youDied.gameObject.SetActive(true);
+                Singelton.getInstance().running = false;
+                GetComponent<AudioSource>().Play();
+                //youDied.GetComponent<SpriteRenderer>().enabled = true;
+            }
 
         }
         else if (collision.transform.tag == "Checkpont")
@@ -93,5 +115,6 @@ public class Player_movment : MonoBehaviour
 
         }
     }
+    
 
 }
