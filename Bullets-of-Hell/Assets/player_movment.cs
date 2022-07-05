@@ -8,6 +8,7 @@ public class Player_movment : MonoBehaviour
 {
     public Rigidbody2D rb;
     public float moveSpeed;
+    public float dashDistance = 10f;
     public InputAction playerControls;
     public Transform youDied;
 
@@ -54,6 +55,15 @@ public class Player_movment : MonoBehaviour
         if (Keyboard.current.shiftKey.wasReleasedThisFrame)
         {
             moveSpeed *= 2;
+        }
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            
+                transform.position = new Vector2(transform.position.x, transform.position.y + dashDistance);
+           
+
+
+
         }
     }
 

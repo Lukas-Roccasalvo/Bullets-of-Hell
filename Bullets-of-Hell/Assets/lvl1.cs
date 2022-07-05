@@ -22,7 +22,7 @@ public class lvl1 : MonoBehaviour
             Singelton.getInstance().score = 0;
             Singelton.getInstance().health = 3;
             Singelton.getInstance().running = true;
-            SceneManager.LoadScene(1);
+            
         }
     }
 }

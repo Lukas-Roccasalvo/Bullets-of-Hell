@@ -1289,6 +1289,22 @@ PrefabInstance:
       propertyPath: youDied
       value: 
       objectReference: {fileID: 950871600}
+    - target: {fileID: 5712475359652915974, guid: 22713dc2d4a7ff146aa5d644c693b801, type: 3}
+      propertyPath: playerControls.m_SingletonActionBindings.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712475359652915974, guid: 22713dc2d4a7ff146aa5d644c693b801, type: 3}
+      propertyPath: playerControls.m_SingletonActionBindings.Array.data[5].m_Id
+      value: 08bb1c91-538c-4b69-a4ff-9453a0c28de6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712475359652915974, guid: 22713dc2d4a7ff146aa5d644c693b801, type: 3}
+      propertyPath: playerControls.m_SingletonActionBindings.Array.data[5].m_Path
+      value: <Keyboard>/space
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712475359652915974, guid: 22713dc2d4a7ff146aa5d644c693b801, type: 3}
+      propertyPath: playerControls.m_SingletonActionBindings.Array.data[5].m_Action
+      value: Player Controls
+      objectReference: {fileID: 0}
     - target: {fileID: 5712475359652915975, guid: 22713dc2d4a7ff146aa5d644c693b801, type: 3}
       propertyPath: m_RootOrder
       value: 2
