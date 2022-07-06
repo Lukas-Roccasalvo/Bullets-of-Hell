@@ -44,13 +44,14 @@ public class Player_movment : MonoBehaviour
         moveDirection = playerControls.ReadValue<Vector2>();
         if (Keyboard.current.rKey.wasPressedThisFrame)
         {
-            Singelton.softReset();
+            Singelton.getInstance().health = 3;
+            Singelton.getInstance().score = 0;
+            Singelton.getInstance().running = false;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
         }
         if (Keyboard.current.shiftKey.wasPressedThisFrame)
         {
-            Singelton.getInstance().usedAbility = true;
             moveSpeed /= 2;
         }
         if (Keyboard.current.shiftKey.wasReleasedThisFrame)
@@ -60,7 +61,7 @@ public class Player_movment : MonoBehaviour
         GetComponent<TrailRenderer>().emitting = false;
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
-            Singelton.getInstance().usedAbility = true;
+            
             if (waitdash < Time.time)
             {
                 waitdash = Time.time + dashCooldown;

@@ -7,7 +7,6 @@ public class lvl1 : MonoBehaviour
 {
 
     public int checkpointGoal;
-    public float timeLimit;
     [SerializeField] GameObject endScreen;
 
     // Start is called before the first frame update
@@ -19,7 +18,6 @@ public class lvl1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Singelton.getInstance().softTime += Time.deltaTime;
         if(Singelton.getInstance().score >= checkpointGoal)
         {
             endScreen.SetActive(true);
@@ -27,32 +25,14 @@ public class lvl1 : MonoBehaviour
             {
                 foreach (Transform tt in t.transform)
                 {
-                    switch (tt.GetSiblingIndex())
-                    {
-                        case 0:
-                            if(Singelton.getInstance().health >= 3)
-                            {
-                                tt.gameObject.SetActive(true);
-                            }
-                            break;
-                        case 1:
-                            if(!Singelton.getInstance().usedAbility) {
-                                tt.gameObject.SetActive(true);
-                            }
-                            break;
-                        case 2:
-                            if (Singelton.getInstance().softTime < timeLimit)
-                            {
-                                tt.gameObject.SetActive(true);
-                            }
-                            break;
-                        default:
-                            break;
-                    }
+                    tt.gameObject.SetActive(Random.value > 0.5f);
                 }
                 break;
             }
-
+                
+            Singelton.getInstance().score = 0;
+            Singelton.getInstance().health = 3;
+            Singelton.getInstance().running = true;
             
         }
     }

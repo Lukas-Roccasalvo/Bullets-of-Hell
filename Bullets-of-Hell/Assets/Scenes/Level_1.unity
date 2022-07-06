@@ -399,15 +399,7 @@ PrefabInstance:
       objectReference: {fileID: 1790559938}
     - target: {fileID: 5712475359652915974, guid: 22713dc2d4a7ff146aa5d644c693b801, type: 3}
       propertyPath: dashCooldown
-<<<<<<< Updated upstream
       value: 0.5
-=======
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5712475359652915974, guid: 22713dc2d4a7ff146aa5d644c693b801, type: 3}
-      propertyPath: dashDistance
-      value: 5
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 5712475359652915974, guid: 22713dc2d4a7ff146aa5d644c693b801, type: 3}
       propertyPath: playerControls.m_SingletonActionBindings.Array.size
@@ -506,7 +498,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkpointGoal: 1
-  timeLimit: 10
   endScreen: {fileID: 821399106}
 --- !u!4 &821928434
 Transform:
