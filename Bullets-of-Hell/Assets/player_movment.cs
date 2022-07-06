@@ -11,9 +11,14 @@ public class Player_movment : MonoBehaviour
     public float dashDistance;
     public float dashCooldown;
     private float waitdash = 0f;
+    public float blastRadius;
+    public float blastCooldown;
+    private float waitblast = 0f;
     public InputAction playerControls;
     public Transform youDied;
-
+    public GameObject spawners;
+    public ParticleSystem particlesblast;
+    public ParticleSystem particlesready;
     private int score = 0;
 
     Vector2 moveDirection = Vector2.zero;
@@ -38,9 +43,7 @@ public class Player_movment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //float moveX = Input.GetAxis("Horizontal");
-        //float moveY = Input.GetAxis("Vertical");
-        //moveDirection = new Vector2(moveX, moveY).normalized;
+
         moveDirection = playerControls.ReadValue<Vector2>();
         if (Keyboard.current.rKey.wasPressedThisFrame)
         {
@@ -86,12 +89,30 @@ public class Player_movment : MonoBehaviour
                     transform.position = new Vector2(transform.position.x + dashDistance, transform.position.y);
                 }
 
-                
-
             }
+        }
+        particlesready.Play();
+        if (Keyboard.current.altKey.wasPressedThisFrame)
+        {
+            
+            if (waitblast < Time.time)
+            {
+                particlesready.Stop();
+                waitblast = Time.time + blastCooldown;
+                particlesblast.Play();
+                foreach (Transform spawner in spawners.transform)
+                {
+                    foreach (Transform bullet in spawner.transform)
+                    {
+                        if (Vector2.Distance(transform.position, bullet.transform.position) < blastRadius)
+                        {
+                            Destroy(bullet.gameObject);
+                        }
 
-
-
+                    }
+                }
+            }
+            
         }
     }
 
@@ -145,9 +166,9 @@ public class Player_movment : MonoBehaviour
                 GameObject checkpoint = Instantiate(collision.gameObject);
                 checkpoint.transform.position = new Vector2(Random.Range(-50f, 50), Random.Range(-28f, 28));
                 Destroy(collision.gameObject, 2f);
-            collision.gameObject.GetComponent<CircleCollider2D>().enabled = false;
-            collision.gameObject.GetComponent<SpriteRenderer>().enabled = false;
-            collision.gameObject.GetComponent<AudioSource>().Play();
+                collision.gameObject.GetComponent<CircleCollider2D>().enabled = false;
+                collision.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                collision.gameObject.GetComponent<AudioSource>().Play();
 
             
 
