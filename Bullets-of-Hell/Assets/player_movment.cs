@@ -14,7 +14,6 @@ public class Player_movment : MonoBehaviour
     public InputAction playerControls;
     public Transform youDied;
 
-    private int score = 0;
 
     Vector2 moveDirection = Vector2.zero;
 
