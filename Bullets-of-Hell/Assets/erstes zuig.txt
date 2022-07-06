@@ -1,0 +1,14 @@
+- Bullet Hell
+- bullets de af onen zuifliagen
+- bullets kennen in muster form oder random spawnen
+- man stuert a mandele des mua fliagt und bullets ausweichen muas
+- mon hot 3 leben
+- spielmodus unedlich
+- highscore
+- personal highscore anzeigen
+- bullets de oprollen
+- fähigkeiten ( flash, shield, regen)
+- schian mochen
+- musi
+-3 sterne (kone fehigenketien, koan schondn, mox ziet)
+-ziel von lvl isch chepoints sommln
