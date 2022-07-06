@@ -5,9 +5,11 @@ using UnityEngine;
 public class Singelton
 {
     public static Singelton self;
-    public int score = 0;
-    public bool running = true;
-    public int health = 3;
+    public int score;
+    public bool running;
+    public int health;
+    public bool usedAbility;
+    public float softTime;
 
     private Singelton()
     {
@@ -18,7 +20,17 @@ public class Singelton
         if(self == null)
         {
             self = new Singelton();
+            Singelton.softReset();
         }
         return self;
+    }
+
+    public static void softReset()
+    {
+        getInstance().score = 0;
+        getInstance().running = true;
+        getInstance().health = 3;
+        getInstance().usedAbility = false;
+        getInstance().softTime = 0f;
     }
 }
