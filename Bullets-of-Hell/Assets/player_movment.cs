@@ -64,7 +64,7 @@ public class Player_movment : MonoBehaviour
         GetComponent<TrailRenderer>().emitting = false;
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
-            
+
             if (waitdash < Time.time)
             {
                 waitdash = Time.time + dashCooldown;
@@ -94,7 +94,7 @@ public class Player_movment : MonoBehaviour
         particlesready.Play();
         if (Keyboard.current.altKey.wasPressedThisFrame)
         {
-            
+
             if (waitblast < Time.time)
             {
                 particlesready.Stop();
@@ -112,13 +112,13 @@ public class Player_movment : MonoBehaviour
                     }
                 }
             }
-            
+
         }
     }
 
     private void FixedUpdate()
     {
-        
+
         if(Singelton.getInstance().running)
         {
             rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
@@ -170,10 +170,10 @@ public class Player_movment : MonoBehaviour
                 collision.gameObject.GetComponent<SpriteRenderer>().enabled = false;
                 collision.gameObject.GetComponent<AudioSource>().Play();
 
-            
+
 
         }
     }
-    
+
 
 }
