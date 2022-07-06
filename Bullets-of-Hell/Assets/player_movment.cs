@@ -8,7 +8,7 @@ public class Player_movment : MonoBehaviour
 {
     public Rigidbody2D rb;
     public float moveSpeed;
-    public float dashDistance = 10f;
+    public float dashDistance = 5f;
     public InputAction playerControls;
     public Transform youDied;
 
@@ -58,9 +58,24 @@ public class Player_movment : MonoBehaviour
         }
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
-            
+
+            if (Keyboard.current.wKey.isPressed)
+            {
                 transform.position = new Vector2(transform.position.x, transform.position.y + dashDistance);
-           
+            }
+            if (Keyboard.current.sKey.isPressed)
+            {
+                transform.position = new Vector2(transform.position.x, transform.position.y - dashDistance);
+            }
+            if (Keyboard.current.aKey.isPressed)
+            {
+                transform.position = new Vector2(transform.position.x - dashDistance, transform.position.y);
+            }
+            if (Keyboard.current.dKey.isPressed)
+            {
+                transform.position = new Vector2(transform.position.x + dashDistance, transform.position.y);
+            }
+
 
 
 

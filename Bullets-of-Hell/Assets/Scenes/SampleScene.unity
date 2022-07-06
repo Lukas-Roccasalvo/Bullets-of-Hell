@@ -1062,6 +1062,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dark_Souls_You_Died_Screen_-_Completely_Black_Screen_0-2_screenshot
       objectReference: {fileID: 0}
+    - target: {fileID: 4227841655250517094, guid: 74e7c38bec3c89a469fa18b45d918c77, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4227841655250517112, guid: 74e7c38bec3c89a469fa18b45d918c77, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -1291,7 +1295,7 @@ PrefabInstance:
       objectReference: {fileID: 950871600}
     - target: {fileID: 5712475359652915974, guid: 22713dc2d4a7ff146aa5d644c693b801, type: 3}
       propertyPath: playerControls.m_SingletonActionBindings.Array.size
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5712475359652915974, guid: 22713dc2d4a7ff146aa5d644c693b801, type: 3}
       propertyPath: playerControls.m_SingletonActionBindings.Array.data[5].m_Id
