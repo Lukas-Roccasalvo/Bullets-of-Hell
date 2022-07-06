@@ -8,7 +8,9 @@ public class Player_movment : MonoBehaviour
 {
     public Rigidbody2D rb;
     public float moveSpeed;
-    public float dashDistance = 5f;
+    public float dashDistance;
+    public float dashCooldown;
+    private float waitdash = 0f;
     public InputAction playerControls;
     public Transform youDied;
 
@@ -56,26 +58,37 @@ public class Player_movment : MonoBehaviour
         {
             moveSpeed *= 2;
         }
+        GetComponent<TrailRenderer>().emitting = false;
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
+            
+            if (waitdash < Time.time)
+            {
+                waitdash = Time.time + dashCooldown;
 
-            if (Keyboard.current.wKey.isPressed)
-            {
-                transform.position = new Vector2(transform.position.x, transform.position.y + dashDistance);
-            }
-            if (Keyboard.current.sKey.isPressed)
-            {
-                transform.position = new Vector2(transform.position.x, transform.position.y - dashDistance);
-            }
-            if (Keyboard.current.aKey.isPressed)
-            {
-                transform.position = new Vector2(transform.position.x - dashDistance, transform.position.y);
-            }
-            if (Keyboard.current.dKey.isPressed)
-            {
-                transform.position = new Vector2(transform.position.x + dashDistance, transform.position.y);
-            }
 
+                GetComponent<TrailRenderer>().emitting = true;
+
+                if (Keyboard.current.wKey.isPressed)
+                {
+                    transform.position = new Vector2(transform.position.x, transform.position.y + dashDistance);
+                }
+                if (Keyboard.current.sKey.isPressed)
+                {
+                    transform.position = new Vector2(transform.position.x, transform.position.y - dashDistance);
+                }
+                if (Keyboard.current.aKey.isPressed)
+                {
+                    transform.position = new Vector2(transform.position.x - dashDistance, transform.position.y);
+                }
+                if (Keyboard.current.dKey.isPressed)
+                {
+                    transform.position = new Vector2(transform.position.x + dashDistance, transform.position.y);
+                }
+
+                
+
+            }
 
 
 
