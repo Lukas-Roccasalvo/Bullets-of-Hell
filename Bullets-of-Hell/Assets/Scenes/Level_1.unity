@@ -383,7 +383,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5712475359652915971, guid: 22713dc2d4a7ff146aa5d644c693b801, type: 3}
       propertyPath: m_Time
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 5712475359652915971, guid: 22713dc2d4a7ff146aa5d644c693b801, type: 3}
       propertyPath: m_Emitting
@@ -397,6 +397,10 @@ PrefabInstance:
       propertyPath: youDied
       value: 
       objectReference: {fileID: 1790559938}
+    - target: {fileID: 5712475359652915974, guid: 22713dc2d4a7ff146aa5d644c693b801, type: 3}
+      propertyPath: dashCooldown
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5712475359652915974, guid: 22713dc2d4a7ff146aa5d644c693b801, type: 3}
       propertyPath: playerControls.m_SingletonActionBindings.Array.size
       value: 5
@@ -862,6 +866,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -89.956
       objectReference: {fileID: 0}
+    - target: {fileID: 1735097053924291095, guid: 074873b1d9870674c9108c6bd65acad6, type: 3}
+      propertyPath: m_Size.x
+      value: 39.116867
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735097053924291095, guid: 074873b1d9870674c9108c6bd65acad6, type: 3}
+      propertyPath: m_Offset.x
+      value: -19.058434
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 074873b1d9870674c9108c6bd65acad6, type: 3}
 --- !u!1001 &1476866764
@@ -932,6 +944,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: collider east
       objectReference: {fileID: 0}
+    - target: {fileID: 7712064208495547421, guid: bb01ccc9b63ae4e4b9b9aaa0726c2848, type: 3}
+      propertyPath: m_Size.y
+      value: 139.57355
+      objectReference: {fileID: 0}
+    - target: {fileID: 7712064208495547421, guid: bb01ccc9b63ae4e4b9b9aaa0726c2848, type: 3}
+      propertyPath: m_Offset.y
+      value: 29.163374
+      objectReference: {fileID: 0}
     - target: {fileID: 7712064208495547423, guid: bb01ccc9b63ae4e4b9b9aaa0726c2848, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -993,6 +1013,14 @@ PrefabInstance:
     - target: {fileID: 2316291485330151237, guid: d7b252ccb3dc0254f93880f6267485b9, type: 3}
       propertyPath: m_Name
       value: collider west
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316291485330151238, guid: d7b252ccb3dc0254f93880f6267485b9, type: 3}
+      propertyPath: m_Size.y
+      value: 138.22902
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316291485330151238, guid: d7b252ccb3dc0254f93880f6267485b9, type: 3}
+      propertyPath: m_Offset.y
+      value: 29.835625
       objectReference: {fileID: 0}
     - target: {fileID: 2316291485330151256, guid: d7b252ccb3dc0254f93880f6267485b9, type: 3}
       propertyPath: m_RootOrder
