@@ -79,7 +79,10 @@ public class SpawnerScript : MonoBehaviour
                 
                
                 direction = new Vector2(x, y) * BulletSpeed;
-                Anglerotation(PositonsBullet[cunter]);
+                if (cunter < PositonsBullet.Length)
+                {
+                    Anglerotation(PositonsBullet[cunter]);
+                }
                 cunter++;
                 if (cunter == PositonsBullet.Length)
                 {

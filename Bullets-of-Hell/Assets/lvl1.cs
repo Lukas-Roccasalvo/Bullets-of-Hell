@@ -7,6 +7,8 @@ public class lvl1 : MonoBehaviour
 {
 
     public int checkpointGoal;
+    [SerializeField] GameObject endScreen;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +20,16 @@ public class lvl1 : MonoBehaviour
     {
         if(Singelton.getInstance().score >= checkpointGoal)
         {
-            //todo end screen
+            endScreen.SetActive(true);
+            foreach(Transform t in endScreen.transform)
+            {
+                foreach (Transform tt in t.transform)
+                {
+                    tt.gameObject.SetActive(Random.value > 0.5f);
+                }
+                break;
+            }
+                
             Singelton.getInstance().score = 0;
             Singelton.getInstance().health = 3;
             Singelton.getInstance().running = true;
