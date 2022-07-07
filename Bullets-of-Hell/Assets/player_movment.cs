@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Player_movment : MonoBehaviour
 {
     public Rigidbody2D rb;
+    public float invincibility;
     public float moveSpeed;
     public float dashDistance;
     public float dashCooldown;
@@ -19,6 +20,7 @@ public class Player_movment : MonoBehaviour
     public GameObject spawners;
     public ParticleSystem particlesblast;
     public ParticleSystem particlesready;
+    private float lastinstancecollisiontime;
 
     Vector2 moveDirection = Vector2.zero;
 
@@ -136,8 +138,14 @@ public class Player_movment : MonoBehaviour
         }
         if (collision.transform.tag == "Bullet")
         {
-            Singelton.getInstance().health--;
             Destroy(collision.gameObject);
+            if (lastinstancecollisiontime + invincibility > Time.time)
+            {
+                return;
+            }
+            Singelton.getInstance().health--;
+            lastinstancecollisiontime = Time.time;
+            
             switch (Singelton.getInstance().health)
             {
                 case 2:
