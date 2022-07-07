@@ -20,6 +20,7 @@ public class lvl1 : MonoBehaviour
         if (Singelton.getInstance().score >= checkpointGoal)
         {
             endScreen.SetActive(true);
+            Singelton.getInstance().running = false;
             foreach (Transform t in endScreen.transform)
             {
                 foreach (Transform tt in t)
