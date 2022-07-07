@@ -92,7 +92,7 @@ public class Player_movment : MonoBehaviour
         }
         if (waitblast < Time.time)
         {
-            //particlesready.enableEmission = true;
+            particlesready.enableEmission = true;
         }
 
         if (Keyboard.current.altKey.wasPressedThisFrame)
@@ -100,7 +100,7 @@ public class Player_movment : MonoBehaviour
 
             if (waitblast < Time.time)
             {
-                //particlesready.enableEmission = false;
+                particlesready.enableEmission = false;
                 waitblast = Time.time + blastCooldown;
                 particlesblast.Play();
                 foreach (Transform spawner in spawners.transform)
