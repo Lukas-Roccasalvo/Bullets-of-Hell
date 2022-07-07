@@ -19,7 +19,6 @@ public class Player_movment : MonoBehaviour
     public GameObject spawners;
     public ParticleSystem particlesblast;
     public ParticleSystem particlesready;
-    private int score = 0;
 
     Vector2 moveDirection = Vector2.zero;
 
@@ -53,6 +52,7 @@ public class Player_movment : MonoBehaviour
         }
         if (Keyboard.current.shiftKey.wasPressedThisFrame)
         {
+            Singelton.getInstance().usedAbility = true;
             moveSpeed /= 2;
         }
         if (Keyboard.current.shiftKey.wasReleasedThisFrame)
@@ -62,6 +62,7 @@ public class Player_movment : MonoBehaviour
         GetComponent<TrailRenderer>().emitting = false;
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
+            Singelton.getInstance().usedAbility = true;
 
             if (waitdash < Time.time)
             {
