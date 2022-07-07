@@ -4928,6 +4928,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 5712475359652915968}
+  invincibility: 0.2
   moveSpeed: 25
   dashDistance: 5
   dashCooldown: 0.2
