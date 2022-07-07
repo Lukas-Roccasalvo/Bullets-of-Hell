@@ -21,6 +21,7 @@ public class Singelton
         if(self == null)
         {
             self = new Singelton();
+            Singelton.softReset();
         }
         return self;
     }

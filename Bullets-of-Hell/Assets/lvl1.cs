@@ -16,8 +16,7 @@ public class lvl1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Singelton.getInstance().score >= checkpointGoal)
-            Singelton.getInstance().softTime += Time.deltaTime;
+        Singelton.getInstance().softTime += Time.deltaTime;
         if (Singelton.getInstance().score >= checkpointGoal)
         {
             endScreen.SetActive(true);
@@ -50,10 +49,6 @@ public class lvl1 : MonoBehaviour
                     }
                 break;
             }
-
-            Singelton.getInstance().score = 0;
-            Singelton.getInstance().health = 3;
-            Singelton.getInstance().running = true;
 
 
         }
