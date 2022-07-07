@@ -91,7 +91,7 @@ public class Player_movment : MonoBehaviour
 
             }
         }
-        particlesready.Play();
+        //particlesready.Play();
         if (Keyboard.current.altKey.wasPressedThisFrame)
         {
 
