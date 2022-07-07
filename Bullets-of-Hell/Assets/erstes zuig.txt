@@ -1,9 +1,9 @@
 - Bullet Hell
-- bullets de af onen zuifliagen
+
 - bullets kennen in muster form oder random spawnen
-- man stuert a mandele des mua fliagt und bullets ausweichen muas
-- mon hot 3 leben
-- spielmodus unedlich
+
+
+
 - highscore
 - personal highscore anzeigen
 - bullets de oprollen
@@ -16,4 +16,7 @@
 -kisten sammeln
 -schild tanksch 1 schuss, running false
 -linien/laser
--
+-Munterluster mochen
+-levelmochen 6
+- unendlich level mit bewegender skybox
+- MENÜ
