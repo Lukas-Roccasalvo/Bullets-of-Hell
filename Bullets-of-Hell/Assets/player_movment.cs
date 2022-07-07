@@ -47,9 +47,7 @@ public class Player_movment : MonoBehaviour
         moveDirection = playerControls.ReadValue<Vector2>();
         if (Keyboard.current.rKey.wasPressedThisFrame)
         {
-            Singelton.getInstance().health = 3;
-            Singelton.getInstance().score = 0;
-            Singelton.getInstance().running = false;
+            Singelton.softReset();
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
         }
@@ -91,13 +89,17 @@ public class Player_movment : MonoBehaviour
 
             }
         }
-        //particlesready.Play();
+        if (waitblast < Time.time)
+        {
+            //particlesready.enableEmission = true;
+        }
+
         if (Keyboard.current.altKey.wasPressedThisFrame)
         {
 
             if (waitblast < Time.time)
             {
-                particlesready.Stop();
+                //particlesready.enableEmission = false;
                 waitblast = Time.time + blastCooldown;
                 particlesblast.Play();
                 foreach (Transform spawner in spawners.transform)
