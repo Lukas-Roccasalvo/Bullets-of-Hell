@@ -13,7 +13,7 @@
 -3 sterne (kone fehigenketien, koan schondn, mox ziet)
 -ziel von lvl isch chepoints sommln
 -raumschiff im weltal, explodierende planeten -> meteoriede.
--kisten sammeln
+-kisten sammeln grafix
 -schild tanksch 1 schuss, running false
 -linien/laser
 -Munterluster mochen
