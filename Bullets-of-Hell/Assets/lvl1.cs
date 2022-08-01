@@ -24,6 +24,7 @@ public class lvl1 : MonoBehaviour
             foreach (Transform t in endScreen.transform)
             {
                 foreach (Transform tt in t)
+                {
                     switch (tt.GetSiblingIndex())
                     {
 
@@ -48,7 +49,9 @@ public class lvl1 : MonoBehaviour
                         default:
                             break;
                     }
-                break;
+                }
+     
+            break;
             }
 
 

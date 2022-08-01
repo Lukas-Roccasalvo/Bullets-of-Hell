@@ -20,3 +20,4 @@
 -levelmochen 6
 - unendlich level mit bewegender skybox
 - MENÜ
+- highscore/steren speichern

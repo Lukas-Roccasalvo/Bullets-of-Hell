@@ -33,19 +33,19 @@ public class Mainmngrexescenemanaagmentmenuescenemanagmentscript : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
-    public void lvl1()
+    public void lvl4()
     {
         SceneManager.LoadScene(0);
     }
-    public void lvl1()
+    public void lvl5()
     {
         SceneManager.LoadScene(0);
     }
-    public void lvl1()
+    public void lvl6()
     {
         SceneManager.LoadScene(0);
     }
-    public void lvl1()
+    public void lvl7()
     {
         SceneManager.LoadScene(0);
     }
