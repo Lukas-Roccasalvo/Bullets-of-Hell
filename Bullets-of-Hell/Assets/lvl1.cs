@@ -6,12 +6,15 @@ public class lvl1 : MonoBehaviour
     public int checkpointGoal;
     public float timeLimit;
     [SerializeField] GameObject endScreen;
-    private int counter = 0;
+    
+    
 
     // Start is called before the first frame update
     void Start()
     {
-
+        if (!PlayerPrefs.HasKey("Level1"))
+            PlayerPrefs.SetInt("Level1", 0b000);
+        print(PlayerPrefs.GetInt("Level1")+" ");
     }
 
     // Update is called once per frame
@@ -34,21 +37,21 @@ public class lvl1 : MonoBehaviour
                             if (Singelton.getInstance().health >= 3)
                             {
                                 tt.gameObject.SetActive(true);
-                                counter++;
+                                PlayerPrefs.SetInt("Level1", PlayerPrefs.GetInt("Level1") | 0b100);
                             }
                             break;
                         case 1:
                             if (!Singelton.getInstance().usedAbility)
                             {
                                 tt.gameObject.SetActive(true);
-                                counter++;
+                                PlayerPrefs.SetInt("Level1", PlayerPrefs.GetInt("Level1") | 0b010);
                             }
                             break;
                         case 2:
                             if (Singelton.getInstance().softTime < timeLimit)
                             {
                                 tt.gameObject.SetActive(true);
-                                counter++;
+                                PlayerPrefs.SetInt("Level1", PlayerPrefs.GetInt("Level1") | 0b001);
                             }
                             break;
                         default:
@@ -58,7 +61,7 @@ public class lvl1 : MonoBehaviour
      
             break;
             }
-            PlayerPrefs.SetInt("Score", counter);
+            
             PlayerPrefs.Save();
 
         }
