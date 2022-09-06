@@ -34,21 +34,21 @@ public class lvl1 : MonoBehaviour
                     {
 
                         case 0:
-                            if (Singelton.getInstance().health >= 3)
+                            if (Singelton.getInstance().health >= 3 || ((PlayerPrefs.GetInt("Level1", 0b000) & 0b100) == 0b100))
                             {
                                 tt.gameObject.SetActive(true);
                                 PlayerPrefs.SetInt("Level1", PlayerPrefs.GetInt("Level1") | 0b100);
                             }
                             break;
                         case 1:
-                            if (!Singelton.getInstance().usedAbility)
+                            if (!Singelton.getInstance().usedAbility || ((PlayerPrefs.GetInt("Level1", 0b000) & 0b010) == 0b010))
                             {
                                 tt.gameObject.SetActive(true);
                                 PlayerPrefs.SetInt("Level1", PlayerPrefs.GetInt("Level1") | 0b010);
                             }
                             break;
                         case 2:
-                            if (Singelton.getInstance().softTime < timeLimit)
+                            if (Singelton.getInstance().softTime < timeLimit || ((PlayerPrefs.GetInt("Level1", 0b000) & 0b001) == 0b001))
                             {
                                 tt.gameObject.SetActive(true);
                                 PlayerPrefs.SetInt("Level1", PlayerPrefs.GetInt("Level1") | 0b001);

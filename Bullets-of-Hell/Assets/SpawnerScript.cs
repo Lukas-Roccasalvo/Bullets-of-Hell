@@ -11,7 +11,7 @@ public class SpawnerScript : MonoBehaviour
     public float[] PositonsBullet;
 
     private float spawnTimeLeft = 0f;
-    public float BulletSpeed;
+    public float BulletSpeed, minspeed, maxspeed, firedelay;
     private int cunter = 0;
 
     float x = 1f;
@@ -45,35 +45,35 @@ public class SpawnerScript : MonoBehaviour
         {
             case Type.random_radial:
                 direction = new Vector2(Random.value * 10 - 5, Random.value * 10 - 5);
-                spawnTimeLeft += 0.5f;
+                spawnTimeLeft += firedelay;
                 break;
             case Type.random_left:
-                direction = new Vector2(Random.Range(-10f, -5f), 0f);
+                direction = new Vector2(Random.Range(-maxspeed, -minspeed), 0f);
                 newBullet.GetComponent<SpriteRenderer>().color = new Color(0f, 200f, 0f);
                 newBullet.GetComponent<TrailRenderer>().startColor = new Color(0f, 200f, 0f, 0.6f);
                 newBullet.GetComponent<TrailRenderer>().endColor = new Color(0f, 200f, 0f, 0f);
-                spawnTimeLeft += 2f;
+                spawnTimeLeft += firedelay;
                 break;
             case Type.random_right:
-                direction = new Vector2(Random.Range(10f, 5f), 0f);
+                direction = new Vector2(Random.Range(maxspeed, minspeed), 0f);
                 newBullet.GetComponent<SpriteRenderer>().color = new Color(0f, 200f, 0f);
                 newBullet.GetComponent<TrailRenderer>().startColor = new Color(0f, 200f, 0f, 0.6f);
                 newBullet.GetComponent<TrailRenderer>().endColor = new Color(0f, 200f, 0f, 0f);
-                spawnTimeLeft += 2f;
+                spawnTimeLeft += firedelay;
                 break;
             case Type.random_up:
-                direction = new Vector2(0f, Random.Range(10f, 5f));
+                direction = new Vector2(0f, Random.Range(maxspeed, minspeed));
                 newBullet.GetComponent<SpriteRenderer>().color = new Color(0f, 200f, 0f);
                 newBullet.GetComponent<TrailRenderer>().startColor = new Color(0f, 200f, 0f, 0.6f);
                 newBullet.GetComponent<TrailRenderer>().endColor = new Color(0f, 200f, 0f, 0f);
-                spawnTimeLeft += 2f;
+                spawnTimeLeft += firedelay;
                 break;
             case Type.random_down:
-                direction = new Vector2(0f, Random.Range(-10f, -5f));
+                direction = new Vector2(0f, Random.Range(-maxspeed, -minspeed));
                 newBullet.GetComponent<SpriteRenderer>().color = new Color(0f, 200f, 0f);
                 newBullet.GetComponent<TrailRenderer>().startColor = new Color(0f, 200f, 0f, 0.6f);
                 newBullet.GetComponent<TrailRenderer>().endColor = new Color(0f, 200f, 0f, 0f);
-                spawnTimeLeft += 2f;
+                spawnTimeLeft += firedelay;
                 break;
             case Type.Muster_spwaner:
                 
@@ -83,7 +83,7 @@ public class SpawnerScript : MonoBehaviour
                 cunter++;
                 if (cunter == PositonsBullet.Length)
                 {
-                    spawnTimeLeft += 1f;
+                    spawnTimeLeft += firedelay;
                     cunter = 0;
                 }
                 
